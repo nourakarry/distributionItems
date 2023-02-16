@@ -1,5 +1,9 @@
 <h1>Please scan the Code on the box</h1>
 <div class="row">
+  <select [value]="deviceSelected" (change)="onDeviceSelectChange($event)">
+    <option value="">No Device Selected</option>
+    <option *ngFor="let device of availableDevices" [value]="device.deviceId">{{device.label}}</option>
+  </select>
   <div class="scanner-shell" [hidden]="!hasDevices">
     <zxing-scanner [torch]="torchEnabled" [(device)]="currentDevice" (scanSuccess)="onCodeResult($event)"
       [formats]="formatsEnabled" [tryHarder]="tryHarder" (permissionResponse)="onHasPermission($event)"
@@ -15,12 +19,13 @@
   </div>
 </div>
 <div class="btn-row">
-  <button id="kt_signin_submit" type="submit" class="btn btn-primary px-6 w-100"  [disabled]="PhotoScanned" (click)="rescan()">
+  <button id="kt_signin_submit" type="submit" class="btn btn-primary px-6 w-100" [disabled]="PhotoScanned"
+    (click)="rescan()">
     Rescan
   </button>
 </div>
 <div class="btn-row">
-  <button id="kt_signin_submit" type="submit" class="btn btn-success px-6 w-100"  (click)="send()">
+  <button id="kt_signin_submit" type="submit" class="btn btn-success px-6 w-100" (click)="send()">
     Send
   </button>
 </div>

@@ -1,4 +1,4 @@
-import { AfterContentInit, Component, ViewChild } from '@angular/core';
+import { AfterContentInit, AfterViewInit, ChangeDetectorRef, Component, ViewChild } from '@angular/core';
 import { BarcodeFormat } from '@zxing/library';
 import { BehaviorSubject } from 'rxjs';
 import { DistributedItem } from './models/distributed-item.model';
@@ -9,9 +9,10 @@ import { DistributedItemsService } from './services/distributed-items.service';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
 })
-export class DashboardComponent implements AfterContentInit {
+export class DashboardComponent implements AfterViewInit {
   availableDevices: MediaDeviceInfo[];
-  currentDevice: any;
+  deviceSelected: string;
+  currentDevice: MediaDeviceInfo;
   lat: any;
   lng: any;
   foodBasket = MATERIAL_TYPES.FOODBASKET;
@@ -33,18 +34,25 @@ export class DashboardComponent implements AfterContentInit {
 
   torchEnabled = false;
   tryHarder = false;
-  constructor(private distributedItemsService: DistributedItemsService) {
+  constructor(private distributedItemsService: DistributedItemsService, private cdr: ChangeDetectorRef) {
     this.getLocation();
   }
-
-  ngAfterContentInit(): void {}
+  ngAfterViewInit(): void {
+    this.onDeviceSelectChange('');
+  }
   clearResult(): void {
     this.qrResultString = '';
   }
 
   onCamerasFound(devices: MediaDeviceInfo[]): void {
-    this.availableDevices = devices;
+    console.log('onCamerasFound');
+    //this.currentDevice = this.availableDevices.find((x) => x.deviceId === "ba62bd7254e60f2ff917ba714c598a42924340489865ed44dbdeeef3275a1978");
     this.hasDevices = Boolean(devices && devices.length);
+    this.availableDevices = devices;
+    let dev = this.availableDevices[0];
+    console.log(dev);
+    this.currentDevice = dev;
+    this.cdr.detectChanges();
   }
 
   onCodeResult(resultString: string) {
@@ -57,8 +65,9 @@ export class DashboardComponent implements AfterContentInit {
     this.qrResultString = resultString;
   }
 
-  onDeviceSelectChange(selected: string) {
-    const device = this.availableDevices.find((x) => x.deviceId === selected);
+  onDeviceSelectChange(e:any) {
+    console.log('onDeviceSelectChange');
+    const device = this.availableDevices[0];//.find((x) => x.deviceId === selected);
     this.currentDevice = device;
   }
 
@@ -109,8 +118,7 @@ export class DashboardComponent implements AfterContentInit {
       date: new Date().toISOString(),
       lng: this.lng,
       lat: this.lat,
-      itemName: this.qrResultString,
-      name: 'Nour',
+      itemName: this.qrResultString
     };
     console.log(sendenItem);
     this.distributedItemsService
