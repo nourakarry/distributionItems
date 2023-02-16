@@ -1,0 +1,411 @@
+<form [formGroup]="fg" *ngIf="fg">
+  <div class="card mb-5 mb-xl-10">
+    <div class="card-body pt-9 pb-0">
+      <div class="d-flex flex-wrap flex-sm-nowrap mb-3">
+        <div class="flex-grow-1">
+          <div class="row mb-6">
+            <label class="col-lg-4 col-form-label required fw-bold fs-6">{{ "ADDFAMILY.idCard" | translate }}</label>
+            <div class="col-lg-8">
+              <div class="row">
+                <div class="col-lg-12 fv-row">
+                  <input type="text" class="form-control form-control-lg form-control-solid"
+                    placeholder="{{ 'ADDFAMILY.idCard' | translate }}" formControlName="idCard" name="idCard" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mb-6">
+            <label class="col-lg-4 col-form-label required fw-bold fs-6">{{ "ADDFAMILY.arabicName" | translate
+              }}</label>
+            <div class="col-lg-8">
+              <div class="row">
+                <div class="col-lg-6 fv-row">
+                  <input type="text" class="
+                      form-control form-control-lg form-control-solid
+                      mb-3 mb-lg-0
+                    " placeholder="{{ 'ADDFAMILY.firstName' | translate }}" formControlName="arFName" name="arFName" />
+                </div>
+                <div class="col-lg-6 fv-row">
+                  <input type="text" class="form-control form-control-lg form-control-solid" formControlName="arLName"
+                    name="arLName" placeholder="{{ 'ADDFAMILY.lastName' | translate }}" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mb-6">
+            <label class="col-lg-4 col-form-label required fw-bold fs-6">{{ "ADDFAMILY.englishName" | translate
+              }}</label>
+            <div class="col-lg-8">
+              <div class="row">
+                <div class="col-lg-6 fv-row">
+                  <input type="text" class="
+                      form-control form-control-lg form-control-solid
+                      mb-3 mb-lg-0
+                    " placeholder="{{ 'ADDFAMILY.firstName' | translate }}" formControlName="enFName" name="enFName" />
+                </div>
+                <div class="col-lg-6 fv-row">
+                  <input type="text" class="form-control form-control-lg form-control-solid" formControlName="enLName"
+                    name="enLName" placeholder="{{ 'ADDFAMILY.lastName' | translate }}" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mb-6">
+            <label class="col-lg-4 col-form-label required fw-bold fs-6">{{ "ADDFAMILY.gender" | translate }}</label>
+            <div class="col-lg-8 fv-row">
+              <div class="d-flex align-items-center mt-3">
+                <label class="form-check form-check-inline form-check-solid me-5">
+                  <input class="form-check-input" formControlName="gender" name="gender" type="radio" value="male" />
+                  <span class="fw-bold ps-2 fs-6">{{ "ADDFAMILY.male" | translate }}</span>
+                </label>
+                <label class="form-check form-check-inline form-check-solid">
+                  <input class="form-check-input" formControlName="gender" name="gender" type="radio" value="female" />
+                  <span class="fw-bold ps-2 fs-6">{{ "ADDFAMILY.female" | translate }}</span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="row mb-6">
+            <label class="col-lg-4 col-form-label required fw-bold fs-6">{{ "ADDFAMILY.phoneNumber" | translate
+              }}</label>
+            <div class="col-lg-8">
+              <div class="row">
+                <div class="col-lg-6 fv-row">
+                  <input type="text" class="
+                      form-control form-control-lg form-control-solid
+                      mb-3 mb-lg-0
+                    " placeholder="{{ 'ADDFAMILY.mainNumber' | translate }}" formControlName="mainNumber"
+                    name="mainNumber" />
+                </div>
+                <div class="col-lg-6 fv-row">
+                  <input type="text" class="form-control form-control-lg form-control-solid"
+                    placeholder="{{ 'ADDFAMILY.secondNumber' | translate }}" formControlName="secondNumber"
+                    name="secondNumber" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mb-6">
+            <label class="col-lg-4 col-form-label required fw-bold fs-6">{{ "ADDFAMILY.birthday" | translate }}</label>
+            <div class="col-lg-8">
+              <div class="row">
+                <div class="col-lg-12 fv-row">
+                  <input type="date" class="
+                      form-control form-control-lg form-control-solid
+                      mb-3 mb-lg-0
+                    " placeholder="{{ 'ADDFAMILY.birthday' | translate }}" formControlName="birthday"
+                    name="birthday" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mb-6">
+            <label class="col-lg-4 col-form-label required fw-bold fs-6">{{ "ADDFAMILY.email" | translate }}</label>
+            <div class="col-lg-8">
+              <div class="row">
+                <div class="col-lg-12 fv-row">
+                  <input type="text" class="form-control form-control-lg form-control-solid"
+                    placeholder="{{ 'ADDFAMILY.email' | translate }}" formControlName="email" name="email" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ms-7 mb-4">
+          <div class="
+              symbol symbol-100px symbol-lg-160px symbol-fixed
+              position-relative
+            ">
+            <img src="./assets/media/avatars/300-1.jpg" alt="Metronic" />
+            <div class="
+                position-absolute
+                translate-middle
+                bottom-0
+                start-100
+                mb-6
+                bg-success
+                rounded-circle
+                border border-4 border-white
+                h-20px
+                w-20px
+              "></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card mb-5 mb-xl-10">
+    <div class="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse"
+      data-bs-target="#kt_account_profile_details" aria-expanded="true" aria-controls="kt_account_profile_details">
+      <div class="card-title m-0">
+        <h3 class="fw-bolder m-0">{{ "ADDFAMILY.familyDetails" | translate }}</h3>
+      </div>
+    </div>
+    <div id="kt_account_profile_details" class="collapse show">
+      <div class="card mb-5 mb-xl-10">
+        <div class="card-body border-top p-9">
+          <div class="d-flex flex-wrap flex-sm-nowrap mb-3">
+            <div class="flex-grow-1">
+              <div class="row mb-6">
+                <label class="col-lg-4 col-form-label fw-bold fs-6">{{ "ADDFAMILY.familySpender" | translate }}</label>
+                <div class="col-lg-8 fv-row">
+                  <div class="d-flex align-items-center mt-3">
+                    <label class="form-check form-check-inline form-check-solid me-5">
+                      <input class="form-check-input" [value]="true" formControlName="familySpender"
+                        name="familySpender" type="radio" />
+                      <span class="fw-bold ps-2 fs-6">{{ "ADDFAMILY.yes" | translate }}</span>
+                    </label>
+                    <label class="form-check form-check-inline form-check-solid">
+                      <input class="form-check-input" [value]="false" formControlName="familySpender"
+                        name="familySpender" type="radio" />
+                      <span class="fw-bold ps-2 fs-6">{{ "ADDFAMILY.no" | translate }}</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mb-6">
+                <label class="col-lg-4 col-form-label fw-bold fs-6">{{ "ADDFAMILY.isThereAnyProvider" | translate
+                  }}</label>
+                <div class="col-lg-8 fv-row">
+                  <div class="d-flex align-items-center mt-3">
+                    <label class="form-check form-check-inline form-check-solid me-5">
+                      <input class="form-check-input" [value]="true" formControlName="isThereAnyProvider"
+                        name="isThereAnyProvider" type="radio" />
+                      <span class="fw-bold ps-2 fs-6">{{ "ADDFAMILY.yes" | translate }}</span>
+                    </label>
+                    <label class="form-check form-check-inline form-check-solid">
+                      <input class="form-check-input" [value]="false" formControlName="isThereAnyProvider"
+                        name="isThereAnyProvider" type="radio" />
+                      <span class="fw-bold ps-2 fs-6">{{ "ADDFAMILY.no" | translate }}</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mb-6">
+                <label class="col-lg-4 col-form-label required fw-bold fs-6">{{ "ADDFAMILY.job" | translate }}</label>
+                <div class="col-lg-8">
+                  <div class="row">
+                    <div class="col-lg-12 fv-row">
+                      <input type="text" class="form-control form-control-lg form-control-solid" formControlName="job"
+                        name="job" placeholder="{{ 'ADDFAMILY.job' | translate }}" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mb-6">
+                <label class="col-lg-4 col-form-label required fw-bold fs-6">{{ "ADDFAMILY.countOfFamily" | translate
+                  }}</label>
+                <div class="col-lg-8">
+                  <div class="row">
+                    <div class="col-lg-12 fv-row">
+                      <input type="text" class="form-control form-control-lg form-control-solid"
+                        formControlName="countOfFamily" name="countOfFamily"
+                        placeholder="{{ 'ADDFAMILY.countOfFamily' | translate }}" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mb-6">
+                <label class="col-lg-4 col-form-label required fw-bold fs-6">{{ "ADDFAMILY.income" | translate
+                  }}</label>
+                <div class="col-lg-8">
+                  <div class="row">
+                    <div class="col-lg-12 fv-row">
+                      <input type="text" class="form-control form-control-lg form-control-solid"
+                        formControlName="income" name="income" placeholder="{{ 'ADDFAMILY.income' | translate }}" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mb-6">
+                <label class="col-lg-4 col-form-label fw-bold fs-6">{{ "ADDFAMILY.areYouDisplacment" | translate
+                  }}</label>
+                <div class="col-lg-8 fv-row">
+                  <div class="d-flex align-items-center mt-3">
+                    <label class="form-check form-check-inline form-check-solid me-5">
+                      <input class="form-check-input" [value]="true" formControlName="areYouDisplacment"
+                        name="areYouDisplacment" type="radio" />
+                      <span class="fw-bold ps-2 fs-6">{{ "ADDFAMILY.yes" | translate }}</span>
+                    </label>
+                    <label class="form-check form-check-inline form-check-solid">
+                      <input class="form-check-input" [value]="false" formControlName="areYouDisplacment"
+                        name="areYouDisplacment" type="radio" />
+                      <span class="fw-bold ps-2 fs-6">{{ "ADDFAMILY.no" | translate }}</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mb-6">
+                <label class="col-lg-4 col-form-label required fw-bold fs-6">{{ "ADDFAMILY.orginalHome" | translate
+                  }}</label>
+                <div class="col-lg-8">
+                  <div class="row">
+                    <div class="col-lg-12 fv-row">
+                      <input type="text" class="form-control form-control-lg form-control-solid"
+                        formControlName="orginalHome" name="orginalHome"
+                        placeholder="{{ 'ADDFAMILY.orginalHome' | translate }}" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mb-6">
+                <label class="col-lg-4 col-form-label fw-bold fs-6">{{ "ADDFAMILY.areYouRefugee" | translate }}</label>
+                <div class="col-lg-8 fv-row">
+                  <div class="d-flex align-items-center mt-3">
+                    <label class="form-check form-check-inline form-check-solid me-5">
+                      <input class="form-check-input" [value]="true" formControlName="areYouRefugee"
+                        name="areYouRefugee" type="radio" />
+                      <span class="fw-bold ps-2 fs-6">{{ "ADDFAMILY.yes" | translate }}</span>
+                    </label>
+                    <label class="form-check form-check-inline form-check-solid">
+                      <input class="form-check-input" [value]="false" formControlName="areYouRefugee"
+                        name="areYouRefugee" type="radio" />
+                      <span class="fw-bold ps-2 fs-6">{{ "ADDFAMILY.no" | translate }}</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mb-6">
+                <label class="col-lg-4 col-form-label required fw-bold fs-6">{{ "ADDFAMILY.adress" | translate
+                  }}</label>
+                <div class="col-lg-8">
+                  <div class="row">
+                    <div class="col-lg-12 fv-row">
+                      <textarea class="form-control form-control-lg form-control-solid" formControlName="adress"
+                        name="adress" placeholder="{{ 'ADDFAMILY.adress' | translate }}"></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="row mb-6">
+                <label class="col-lg-4 col-form-label fw-bold fs-6">{{ "ADDFAMILY.dead" | translate }}</label>
+                <div class="col-lg-8 fv-row">
+                  <div class="d-flex align-items-center mt-3">
+                    <label class="form-check form-check-inline form-check-solid me-5">
+                      <input class="form-check-input" [value]="true" formControlName="dead" name="dead" type="radio" />
+                      <span class="fw-bold ps-2 fs-6">{{ "ADDFAMILY.yes" | translate }}</span>
+                    </label>
+                    <label class="form-check form-check-inline form-check-solid">
+                      <input class="form-check-input" [value]="false" formControlName="dead" name="dead" type="radio" />
+                      <span class="fw-bold ps-2 fs-6">{{ "ADDFAMILY.no" | translate }}</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mb-6">
+                <label class="col-lg-4 col-form-label fw-bold fs-6">{{ "ADDFAMILY.gettingAidFromOther" | translate
+                  }}</label>
+                <div class="col-lg-8 fv-row">
+                  <div class="d-flex align-items-center mt-3">
+                    <label class="form-check form-check-inline form-check-solid me-5">
+                      <input class="form-check-input" [value]="true" formControlName="gettingAidFromOther"
+                        name="gettingAidFromOther" type="radio" />
+                      <span class="fw-bold ps-2 fs-6">{{ "ADDFAMILY.yes" | translate }}</span>
+                    </label>
+                    <label class="form-check form-check-inline form-check-solid">
+                      <input class="form-check-input" [value]="false" formControlName="gettingAidFromOther"
+                        name="gettingAidFromOther" type="radio" />
+                      <span class="fw-bold ps-2 fs-6">{{ "ADDFAMILY.no" | translate }}</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mb-6">
+                <label class="col-lg-4 col-form-label fw-bold fs-6">{{ "ADDFAMILY.livingInCamp" | translate }}</label>
+                <div class="col-lg-8 fv-row">
+                  <div class="d-flex align-items-center mt-3">
+                    <label class="form-check form-check-inline form-check-solid me-5">
+                      <input class="form-check-input" [value]="true" formControlName="livingInCamp" name="livingInCamp"
+                        type="radio" />
+                      <span class="fw-bold ps-2 fs-6">{{ "ADDFAMILY.yes" | translate }}</span>
+                    </label>
+                    <label class="form-check form-check-inline form-check-solid">
+                      <input class="form-check-input" [value]="false" formControlName="livingInCamp" name="livingInCamp"
+                        type="radio" />
+                      <span class="fw-bold ps-2 fs-6">{{ "ADDFAMILY.no" | translate }}</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-6">
+                <label class="col-lg-4 col-form-label required fw-bold fs-6">{{ "ADDFAMILY.campName" | translate
+                  }}</label>
+                <div class="col-lg-8">
+                  <div class="row">
+                    <div class="col-lg-12 fv-row">
+                      <input class="form-control form-control-lg form-control-solid" formControlName="campName"
+                        name="campName" placeholder="{{ 'ADDFAMILY.campName' | translate }}" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mb-6">
+                <label class="col-lg-4 col-form-label fw-bold fs-6">{{ "ADDFAMILY.isThereAnyDisapility" | translate
+                  }}</label>
+                <div class="col-lg-8 fv-row">
+                  <div class="d-flex align-items-center mt-3">
+                    <label class="form-check form-check-inline form-check-solid me-5">
+                      <input class="form-check-input" [value]="true" formControlName="isThereAnyDisapility"
+                        name="isThereAnyDisapility" type="radio" />
+                      <span class="fw-bold ps-2 fs-6">{{ "ADDFAMILY.yes" | translate }}</span>
+                    </label>
+                    <label class="form-check form-check-inline form-check-solid">
+                      <input class="form-check-input" [value]="false" formControlName="isThereAnyDisapility"
+                        name="isThereAnyDisapility" type="radio" />
+                      <span class="fw-bold ps-2 fs-6">{{ "ADDFAMILY.no" | translate }}</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="row mb-6">
+                <label class="col-lg-4 col-form-label required fw-bold fs-6">{{ "ADDFAMILY.notes" | translate }}</label>
+                <div class="col-lg-8">
+                  <div class="row">
+                    <div class="col-lg-12 fv-row">
+                      <textarea class="form-control form-control-lg form-control-solid" formControlName="notes"
+                        name="notes" placeholder="{{ 'ADDFAMILY.notes' | translate }}"></textarea>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+
+            <div class="ms-7 mb-4 w-150px">
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="card-footer d-flex justify-content-end py-6 px-9" *ngIf="!isView">
+        <button type="button" class="btn btn-primary" [disabled]="isLoading" (click)="submit()">
+          <ng-container *ngIf="!isLoading">{{ "GENERAL.saveChanges" | translate }}</ng-container>
+          <ng-container *ngIf="isLoading">
+            <span clas="indicator-progress" [style.display]="'block'">
+              Please wait...{{ " " }}
+              <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+            </span>
+          </ng-container>
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
